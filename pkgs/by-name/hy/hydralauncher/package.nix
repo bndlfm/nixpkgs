@@ -24,7 +24,8 @@ appimageTools.wrapType2 {
     install -Dm644 ${appimageContents}/hydralauncher.desktop \
       $out/share/applications/hydralauncher.desktop
     substituteInPlace $out/share/applications/hydralauncher.desktop \
-      --replace-fail 'Exec=AppRun' 'Exec=${placeholder "out"}/bin/hydralauncher --ozone-platform=x11'
+      --replace-fail 'Exec=AppRun' 'Exec=${placeholder "out"}/bin/hydralauncher'
+      --replace-fail '--no-sandbox' '--ozone-platform=x11 --no-sandbox'
   '';
 
   passthru.updateScript = nix-update-script { };
