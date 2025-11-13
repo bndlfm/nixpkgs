@@ -51,7 +51,7 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "wivrn";
-  version = "0.25";
+  version = "25.11.1";
 
   src = fetchFromGitHub {
     owner = "wivrn";
